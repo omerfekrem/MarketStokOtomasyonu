@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getUrunler">
+        <s:complexType />
+      </s:element>
+      <s:element name="getUrunlerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUrunlerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStokBiten">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStokBitenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStokBitenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStokAzalan">
+        <s:complexType />
+      </s:element>
+      <s:element name="getStokAzalanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStokAzalanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getKategori">
+        <s:complexType />
+      </s:element>
+      <s:element name="getKategoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKategoriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrunSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barkod" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrunSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postUrunSilResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="urun_barkod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="kategori_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="urun_adi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="miktar" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fiyat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postUrunResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrunGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="urun_barkod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="kategori_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="urun_adi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="miktar" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fiyat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postUrunGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postUrunGuncelleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barkod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="urun_adi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kategori_adi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAramaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAramaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SorguCalistir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SorguCalistirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SorguCalistirResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTedarikciler">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTedarikcilerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTedarikcilerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTedarikciArama">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciTel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTedarikciAramaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTedarikciAramaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postTedarikciGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciAdres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciTel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postTedarikciGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postTedarikciGuncelleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postTedarikci">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciAdi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciAdres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tedarikciTel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="postTedarikciResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postTedarikciResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getUrunlerSoapIn">
+    <wsdl:part name="parameters" element="tns:getUrunler" />
+  </wsdl:message>
+  <wsdl:message name="getUrunlerSoapOut">
+    <wsdl:part name="parameters" element="tns:getUrunlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStokBitenSoapIn">
+    <wsdl:part name="parameters" element="tns:getStokBiten" />
+  </wsdl:message>
+  <wsdl:message name="getStokBitenSoapOut">
+    <wsdl:part name="parameters" element="tns:getStokBitenResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStokAzalanSoapIn">
+    <wsdl:part name="parameters" element="tns:getStokAzalan" />
+  </wsdl:message>
+  <wsdl:message name="getStokAzalanSoapOut">
+    <wsdl:part name="parameters" element="tns:getStokAzalanResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKategoriSoapIn">
+    <wsdl:part name="parameters" element="tns:getKategori" />
+  </wsdl:message>
+  <wsdl:message name="getKategoriSoapOut">
+    <wsdl:part name="parameters" element="tns:getKategoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="postUrunSilSoapIn">
+    <wsdl:part name="parameters" element="tns:postUrunSil" />
+  </wsdl:message>
+  <wsdl:message name="postUrunSilSoapOut">
+    <wsdl:part name="parameters" element="tns:postUrunSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="postUrunSoapIn">
+    <wsdl:part name="parameters" element="tns:postUrun" />
+  </wsdl:message>
+  <wsdl:message name="postUrunSoapOut">
+    <wsdl:part name="parameters" element="tns:postUrunResponse" />
+  </wsdl:message>
+  <wsdl:message name="postUrunGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:postUrunGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="postUrunGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:postUrunGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAramaSoapIn">
+    <wsdl:part name="parameters" element="tns:getArama" />
+  </wsdl:message>
+  <wsdl:message name="getAramaSoapOut">
+    <wsdl:part name="parameters" element="tns:getAramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SorguCalistirSoapIn">
+    <wsdl:part name="parameters" element="tns:SorguCalistir" />
+  </wsdl:message>
+  <wsdl:message name="SorguCalistirSoapOut">
+    <wsdl:part name="parameters" element="tns:SorguCalistirResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTedarikcilerSoapIn">
+    <wsdl:part name="parameters" element="tns:getTedarikciler" />
+  </wsdl:message>
+  <wsdl:message name="getTedarikcilerSoapOut">
+    <wsdl:part name="parameters" element="tns:getTedarikcilerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTedarikciAramaSoapIn">
+    <wsdl:part name="parameters" element="tns:getTedarikciArama" />
+  </wsdl:message>
+  <wsdl:message name="getTedarikciAramaSoapOut">
+    <wsdl:part name="parameters" element="tns:getTedarikciAramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="postTedarikciGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:postTedarikciGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="postTedarikciGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:postTedarikciGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="postTedarikciSoapIn">
+    <wsdl:part name="parameters" element="tns:postTedarikci" />
+  </wsdl:message>
+  <wsdl:message name="postTedarikciSoapOut">
+    <wsdl:part name="parameters" element="tns:postTedarikciResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="getUrunler">
+      <wsdl:input message="tns:getUrunlerSoapIn" />
+      <wsdl:output message="tns:getUrunlerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStokBiten">
+      <wsdl:input message="tns:getStokBitenSoapIn" />
+      <wsdl:output message="tns:getStokBitenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStokAzalan">
+      <wsdl:input message="tns:getStokAzalanSoapIn" />
+      <wsdl:output message="tns:getStokAzalanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKategori">
+      <wsdl:input message="tns:getKategoriSoapIn" />
+      <wsdl:output message="tns:getKategoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postUrunSil">
+      <wsdl:input message="tns:postUrunSilSoapIn" />
+      <wsdl:output message="tns:postUrunSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postUrun">
+      <wsdl:input message="tns:postUrunSoapIn" />
+      <wsdl:output message="tns:postUrunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postUrunGuncelle">
+      <wsdl:input message="tns:postUrunGuncelleSoapIn" />
+      <wsdl:output message="tns:postUrunGuncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArama">
+      <wsdl:input message="tns:getAramaSoapIn" />
+      <wsdl:output message="tns:getAramaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SorguCalistir">
+      <wsdl:input message="tns:SorguCalistirSoapIn" />
+      <wsdl:output message="tns:SorguCalistirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciler">
+      <wsdl:input message="tns:getTedarikcilerSoapIn" />
+      <wsdl:output message="tns:getTedarikcilerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciArama">
+      <wsdl:input message="tns:getTedarikciAramaSoapIn" />
+      <wsdl:output message="tns:getTedarikciAramaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikciGuncelle">
+      <wsdl:input message="tns:postTedarikciGuncelleSoapIn" />
+      <wsdl:output message="tns:postTedarikciGuncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikci">
+      <wsdl:input message="tns:postTedarikciSoapIn" />
+      <wsdl:output message="tns:postTedarikciSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUrunler">
+      <soap:operation soapAction="http://tempuri.org/getUrunler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStokBiten">
+      <soap:operation soapAction="http://tempuri.org/getStokBiten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStokAzalan">
+      <soap:operation soapAction="http://tempuri.org/getStokAzalan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKategori">
+      <soap:operation soapAction="http://tempuri.org/getKategori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrunSil">
+      <soap:operation soapAction="http://tempuri.org/postUrunSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrun">
+      <soap:operation soapAction="http://tempuri.org/postUrun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrunGuncelle">
+      <soap:operation soapAction="http://tempuri.org/postUrunGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArama">
+      <soap:operation soapAction="http://tempuri.org/getArama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SorguCalistir">
+      <soap:operation soapAction="http://tempuri.org/SorguCalistir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciler">
+      <soap:operation soapAction="http://tempuri.org/getTedarikciler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciArama">
+      <soap:operation soapAction="http://tempuri.org/getTedarikciArama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikciGuncelle">
+      <soap:operation soapAction="http://tempuri.org/postTedarikciGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikci">
+      <soap:operation soapAction="http://tempuri.org/postTedarikci" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUrunler">
+      <soap12:operation soapAction="http://tempuri.org/getUrunler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStokBiten">
+      <soap12:operation soapAction="http://tempuri.org/getStokBiten" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStokAzalan">
+      <soap12:operation soapAction="http://tempuri.org/getStokAzalan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKategori">
+      <soap12:operation soapAction="http://tempuri.org/getKategori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrunSil">
+      <soap12:operation soapAction="http://tempuri.org/postUrunSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrun">
+      <soap12:operation soapAction="http://tempuri.org/postUrun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postUrunGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/postUrunGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArama">
+      <soap12:operation soapAction="http://tempuri.org/getArama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SorguCalistir">
+      <soap12:operation soapAction="http://tempuri.org/SorguCalistir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciler">
+      <soap12:operation soapAction="http://tempuri.org/getTedarikciler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTedarikciArama">
+      <soap12:operation soapAction="http://tempuri.org/getTedarikciArama" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikciGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/postTedarikciGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postTedarikci">
+      <soap12:operation soapAction="http://tempuri.org/postTedarikci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44317/webservice1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44317/webservice1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
